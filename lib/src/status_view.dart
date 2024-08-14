@@ -7,7 +7,7 @@ class StatusView extends StatelessWidget {
   final double spacing;
   final double radius;
   final double padding;
-  final String centerImageUrl;
+  final String centerImagePath;
   final double strokeWidth;
   final Color seenColor;
   final Color unSeenColor;
@@ -18,11 +18,10 @@ class StatusView extends StatelessWidget {
       this.spacing = 10.0,
       this.radius = 50,
       this.padding = 5,
-      required this.centerImageUrl,
+      required this.centerImagePath,
       this.strokeWidth = 4,
       this.seenColor = Colors.grey,
-      this.unSeenColor = Colors.blue})
-      : assert(centerImageUrl != null, "Please provide centerImageUrl");
+      this.unSeenColor = Colors.blue});
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +44,7 @@ class StatusView extends StatelessWidget {
           ),
           CircleAvatar(
             radius: radius - padding,
-            backgroundImage: NetworkImage(centerImageUrl),
+            backgroundImage: NetworkImage(centerImagePath),
           ),
         ],
       ),
